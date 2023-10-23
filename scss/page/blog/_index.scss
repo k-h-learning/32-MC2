@@ -1,0 +1,72 @@
+@use "../../global" as *;
+
+.blog {
+  background-color: $Green_Light_rgb10;
+  &-wrap {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &__item {
+        width: 28%;
+        margin: 2%;
+        background-color: $White;
+        &__block {
+          transition: all 0.3s;
+          &__img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          &__txt {
+            width: 100%;
+            padding: 3% 4% 8%;
+            box-sizing: border-box;
+            span {
+              font-size: 0.8rem;
+              display: inline-block;
+              margin-bottom: 2%;
+            }
+            h4 {
+              text-decoration: underline;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+@include mq(tab) {
+  .blog {
+    &-wrap {
+      &__list {
+        &__item {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
+
+@include mq(sp) {
+  .blog {
+    &-wrap {
+      &__list {
+        &__item {
+          width: 90%;
+          margin: 6% auto;
+        }
+      }
+    }
+  }
+}

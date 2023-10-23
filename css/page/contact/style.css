@@ -1,0 +1,90 @@
+.contact-wrap {
+  width: 70%;
+}
+.contact-wrap__intro p {
+  text-align: center;
+}
+.contact-wrap__intro p span {
+  display: inline-block;
+  color: #FF0000;
+  font-size: 0.8rem;
+  margin-top: 1.5%;
+}
+.contact-wrap__form {
+  width: 80%;
+  margin: 5% auto;
+}
+.contact-wrap__form__box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto 7.5%;
+}
+.contact-wrap__form__box__ttl {
+  font-weight: bolder;
+  margin-bottom: 2%;
+}
+.contact-wrap__form__box__ttl span {
+  color: #FF0000;
+  display: inline-block;
+  margin-left: 1%;
+}
+.contact-wrap__form__box__select, .contact-wrap__form__box__input, .contact-wrap__form__box__area {
+  height: 3rem;
+  width: 100%;
+  padding-left: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.contact-wrap__form__box__area {
+  height: 10rem;
+}
+.contact-wrap__form .contact-btn {
+  width: 150px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #133315;
+  background-color: #133315;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #fff;
+  font-weight: bolder;
+  transition: all 0.5s ease;
+  z-index: 2;
+  position: relative;
+}
+.contact-wrap__form .contact-btn .btn_bg {
+  width: 150px;
+  height: 50px;
+  left: -150px;
+  top: 0;
+  background: #fff;
+  position: absolute;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+.contact-wrap__form .contact-btn:hover {
+  color: #133315;
+}
+.contact-wrap__form .contact-btn:hover .btn_bg {
+  left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-wrap {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-wrap__form {
+    width: 100%;
+  }
+  .contact-wrap__form__box__select, .contact-wrap__form__box__input, .contact-wrap__form__box__area {
+    height: 4rem;
+  }
+  .contact-wrap__form__box__area {
+    height: 15rem;
+  }
+}

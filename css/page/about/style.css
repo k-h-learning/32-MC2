@@ -1,0 +1,142 @@
+.greet .sp_only {
+  display: none;
+}
+.greet-wrap {
+  width: 80%;
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  position: relative;
+}
+.greet-wrap__left__ttl {
+  position: absolute;
+  top: -100px;
+  left: 0;
+}
+.greet-wrap__left__txt {
+  width: 50%;
+  margin: 5% 30% 5% 5%;
+}
+.greet-wrap__left__txt p {
+  margin-bottom: 5%;
+  line-height: 2;
+}
+.greet-wrap__left__txt span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.greet-wrap__right {
+  width: 350px;
+  position: absolute;
+  top: -100px;
+  right: 0;
+}
+.greet-wrap__right__img {
+  width: 100%;
+  aspect-ratio: 3/4;
+}
+.greet-wrap__right__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 90% top;
+}
+
+.outline {
+  background-color: #F4F4F4;
+}
+.outline-wrap {
+  width: 80%;
+}
+.outline-wrap__body {
+  display: flex;
+  justify-content: space-between;
+}
+.outline-wrap__body__list {
+  width: 65%;
+}
+.outline-wrap__body__list__item {
+  display: flex;
+  justify-content: flex-start;
+}
+.outline-wrap__body__list__item span {
+  width: 15%;
+  margin-right: 5%;
+}
+.outline-wrap__body__list__item p {
+  width: 90%;
+}
+.outline-wrap__body__list hr {
+  margin-bottom: 4%;
+}
+.outline-wrap__body__list hr:last-child {
+  margin-bottom: 0;
+}
+.outline-wrap__body__img {
+  width: 32%;
+  position: sticky;
+  top: 0;
+  right: 0;
+}
+.outline-wrap__body__img img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3/5;
+}
+
+@media screen and (max-width: 1024px) {
+  .greet-wrap {
+    background: unset;
+  }
+  .greet-wrap__left {
+    background-color: #F4F4F4;
+    width: 60%;
+    padding: 6%;
+    box-sizing: border-box;
+  }
+  .greet-wrap__left__txt {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .greet-wrap__right {
+    width: 43%;
+  }
+  .outline-wrap__body__img {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .greet .sp_only {
+    display: block;
+    margin-top: 3%;
+  }
+  .greet-wrap {
+    flex-direction: column-reverse;
+    width: 80%;
+    margin: 3% auto 8%;
+  }
+  .greet-wrap__left {
+    width: 100%;
+  }
+  .greet-wrap__left__ttl {
+    display: none;
+  }
+  .greet-wrap__right {
+    width: 100%;
+    position: static;
+    margin-bottom: 4%;
+  }
+  .outline-wrap__body {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .outline-wrap__body__list {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  .outline-wrap__body__img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,764 @@
+@use "../global" as *;
+
+html {
+  font-size: 16px;
+  @include mq(tab) {
+    font-size: 14px;
+  }
+  @include mq(sp) {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: $font-normal;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: $Black;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $Black;
+}
+
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 6% 0;
+  @include mq(tab) {
+    padding: 8% 0;
+  }
+}
+
+.__inner {
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.ttl_1 {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 1;
+  font-weight: lighter;
+}
+
+.ttl_2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: $White;
+}
+
+.ttl_3 {
+  font-size: 2rem;
+  color: $Green;
+  text-align: center;
+  margin-bottom: 3%;
+  span {
+    display: inline-block;
+    font-size: 6rem;
+    font-family: $font-ttl;
+    color: $Green_t_rgb8;
+    margin: 0 auto;
+    margin-top: -18%;
+  }
+
+}
+
+.ttl_4 {
+  font-size: 1.25rem;
+}
+
+.__btn_1 {
+  width:240px;
+  height:50px;
+  border: 2px solid $Green;
+  background-color: $Green;
+  padding-left: 3rem;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  a {
+    color:$White;
+    transition:all .5s ease;
+    z-index:2;
+    position:relative;
+    line-height: 46px;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 3rem;
+      height: 1.8px;
+      background: $White;
+      bottom: 5px;
+      right: -70px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 1.6px;
+      background: $White;
+      bottom:10.5px;
+      right: -73px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .btn_bg {
+    width: 240px;
+    height: 50px;
+    left: -240px;
+    background: $Gray_Bg;
+    position: absolute;
+    transition: all .5s ease;
+    z-index: 1;
+  }
+  &:hover {
+    .btn_bg{
+      left: 0;
+    }
+    a {
+      color: $Green;
+      &::before, &::after {
+        background-color: $Green;
+      }
+    }
+  }
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  padding: 1.5% 3%;
+  box-sizing: border-box;
+  .header-wrap {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    vertical-align: middle;
+    .drawer {
+      display: none;
+    }
+    &__logo {
+      width: 200px;
+      aspect-ratio: 4 / 1.3;
+      margin: auto 0;
+      a {
+        transition: all 0.3s;
+        img {
+          width: 100%;
+        }
+        &:hover {
+          cursor: pointer;
+          opacity: 0.7;
+        }
+        .logo_g {
+          display: none;
+        }
+      }
+    }
+    &__nav {
+      width: 60%;
+      &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__item {
+          text-align: center;
+          display: inline-block;
+          a {
+            font-size: 1rem;
+            color: $White;
+            display: block;
+            padding-bottom: 3px;
+            transition: all 0.3s;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          a::after {
+            content: "";
+            display: block;
+            width: 0;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid $Green;
+          }
+          a:hover::after {
+            width: 100%;
+            border-bottom: 3px solid $Green;
+          }
+          a:hover {
+            color: $Green;
+          }
+        }
+        .__contact {
+          border: solid 1px $White;
+          border-radius: 50px;
+          padding: 0.5rem 4rem 0.5rem 2rem;
+          transition: all 0.3s ease;
+          a {
+            position: relative;
+            &::after {
+              padding-bottom: 0;
+              border-bottom: none;
+              position: absolute;
+              content: "";
+              top: 0;
+              bottom: 0;
+              right: -2rem;
+              margin: auto;
+              vertical-align: middle;
+              width: 0.4em;
+              height: 0.4em;
+              border-top: 1px solid $White;
+              border-right: 1px solid $White;
+              transform: rotate(45deg);
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            background: $Green;
+            border: solid 1px $Green;
+            a {
+              color: White;
+              &::after {
+                border-top: 1px solid $White;
+                border-right: 1px solid $White;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header.headerScroll {
+  background: $White_rgb90;
+  .header-wrap__logo {
+    .logo_g {
+      display: block;
+    }
+    .logo_f {
+      display: none;
+    }
+  }
+  .header-wrap__nav__list__item {
+    a {
+      color: $Green;
+    }
+  }
+  .__contact {
+    border: solid 1px $Green;
+    a {
+      &::after {
+        border-top: 1px solid $Green;
+        border-right: 1px solid $Green;
+      }
+    }
+  }
+}
+
+
+// スライダー
+.slick-slider {
+  .slick-dots {
+    bottom: -50px;
+    li {
+      margin: 0 1px;
+      button {
+        &:before {
+          color: $Gray_Light;
+          opacity: 1;
+          font-size: 8px;
+        }
+      }
+    }
+    .slick-active {
+      button {
+        &:before {
+          color: $Green_Light;
+        }
+      }
+    }
+  }
+  .slick-list {
+    width: 100%;
+  }
+}
+
+// フェード
+.fadeIn {
+  animation: fadeInAnime 0.8s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeUp {
+  animation: fadeUpAnime 0.8s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeLeft {
+  animation: fadeLeftAnime 0.5s forwards;
+  opacity: 1;
+  overflow: hidden;
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 1;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeRight {
+  animation: fadeRightAnime 0.5s forwards;
+  opacity: 1;
+  overflow: hidden;
+}
+
+@keyframes fadeRightAnime {
+  from {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInTrigger,
+.fadeUpTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger {
+  opacity: 0;
+}
+
+
+
+.footer {
+  width: 100%;
+  height: 100%;
+  padding: 4% 0;
+  background: linear-gradient(to bottom, rgba(19, 51, 21, 70%) 10%, rgba(19, 51, 21, 70%) 100%), url(../img/footer_bg.jpg);
+  background-position: center;
+  background-size: cover;
+  &-wrap {
+    width: 80%;
+    margin: 0 auto;
+    &__body {
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        width: 25%;
+        margin: auto;
+        &__logo {
+          width: 180px;
+          aspect-ratio: 4 / 1.3;
+          margin: 0 auto;
+          a {
+            transition: all 0.3s;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+            &:hover {
+              cursor: pointer;
+              opacity: 0.7;
+            }
+          }
+        }
+        &__add {
+          p {
+            color: $White;
+            font-size: 0.9rem;
+            text-align: center;
+          }
+        }
+      }
+      hr {
+        width: 120px;
+        border-top: 3px solid $White;
+        transform: rotate(90deg);
+        margin: auto;
+      }
+      &__right {
+        width: 70%;
+        margin-left: 3%;
+        &__nav {
+          width: 100%;
+          margin-bottom: 5%;
+          &__list {
+            display: flex;
+            justify-content: space-between;
+            &__item {
+              a {
+                color: $White;
+                position: relative;
+                padding: 0 0 0 16px;
+                transition: all 0.3s;
+                &::before {
+                  position: absolute;
+                  content: "";
+                  top: 52%;
+                  left: 0;
+                  transform: translateY(-50%);
+                  border: 5px solid transparent;
+                  border-left: 8px solid $Green_Light;
+                }
+                &::after {
+                  content: "";
+                  display: block;
+                  width: 0;
+                  transition: all 0.3s ease;
+                  border-bottom: 3px solid $White;
+                }
+                &:hover::after {
+                  width: 100%;
+                  border-bottom: 3px solid $White;
+                }
+              }
+            }
+          }
+        }
+        &__bottom {
+          display: flex;
+          justify-content: flex-start;
+          &__left {
+            margin-right: 5%;
+            a {
+              display: block;
+              padding: 1rem 1.5rem;
+              background-color: $White;
+              border: 1px solid $White;
+              text-align: center;
+              color: $Green;
+              transition: all 0.3s;
+              i {
+                font-size: 2.2rem;
+              }
+              &:hover {
+                cursor: pointer;
+                background-color: $Green_rgb70;
+                color: $White;
+                i {
+                  color: $White;
+                }
+              }
+            }
+          }
+          &__right {
+            margin: auto 0;
+            a {
+              display: inline-block;
+              color: $White;
+              font-size: 2rem;
+              transition: all 0.3s;
+              &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+                transform: scale(1.05);
+              }
+            }
+            p {
+              color: $White;
+              font-size: 0.8rem;
+              line-height: 2.5;
+            }
+          }
+        }
+      }
+    }
+    &__copyright {
+      text-align: center;
+      margin-top: 5%;
+      small {
+        color: $White;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+
+@include mq(pc) {
+  header {
+    .header-wrap {
+      &__logo {
+        width: 160px;
+      }
+      &__nav {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@include mq(tab) {
+  header {
+    height: 80px;
+    .header-wrap {
+      &__logo {
+        width: 100px;
+      }
+      &__nav {
+        width: 80%;
+        &__list {
+          &__item {
+            a {
+              font-size: 0.8rem;
+              white-space: nowrap;
+            }
+          }
+          .__contact {
+            padding: 0.3rem 2rem 0.3rem 1rem;
+            a {
+              &::after {
+                right: -1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .footer {
+    padding: 6% 0;
+    &-wrap {
+      &__body {
+        flex-direction: column;
+        align-items: center;
+        hr {
+          transform: rotate(0);
+          margin: 6% auto;
+        }
+        &__left {
+          width: 100%;
+        }
+        &__right {
+          width: 100%;
+          &__bottom {
+            flex-direction: column;
+            &__left {
+              width: 140px;
+              margin: 5% auto;
+            }
+            &__right {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(sp) {
+  header {
+    height: 70px;
+    .header-wrap {
+      &__logo {
+        width: 150px;
+      }
+    }
+    .drawer {
+      visibility: visible;
+      position: absolute;
+      width: 30px;
+      top: 20px;
+      right: 15px;
+      border-top: solid 5px $White;
+      cursor: pointer;
+      z-index: 500;
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        background: $White;
+        height: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.3s;
+      }
+      &::before {
+        top: 5px;
+      }
+      &::after {
+        top: 15px;
+      }
+    }
+    .header-wrap__nav {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: $Green;
+      &__list {
+        display: block;
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &__item {
+          margin: 5% auto;
+          font-size: 1.5rem;
+          line-height: 3;
+          white-space: nowrap;
+          a {
+            color: $White;
+            font-size: 1.2rem;
+            &:hover {
+              opacity: 0.7;
+              color: $White;
+            }
+          }
+        }
+        .__contact a {
+          display: block;
+          width: 150px;
+          margin: 0 auto;
+          border: 2px solid $White;
+          border-radius: 10px;
+          &:hover {
+            background-color: $White;
+            border: 2px solid $White;
+            color: $Green;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  
+  body.nav-open {
+    header {
+      .drawer {
+        border-top: 0;
+        &::before {
+          top: 15px;
+          transform: rotate(-45deg);
+          background: $White;
+        }
+        &::after {
+          top: 15px;
+          transform: rotate(45deg);
+          background: $White;
+        }
+      }
+    }
+  }
+
+  header.headerScroll {
+    .drawer {
+      border-top: solid 5px $Green;
+      &::before,
+      &::after {
+        background: $Green;
+      }
+    }
+  }
+
+  .ttl_3 {
+    font-size: 1.8rem;
+    span {
+      font-size: 4rem;
+    }
+  }
+
+  .__btn_1 {
+    width: 180px;
+    height: 50px;
+    padding-left: 2rem;
+    a::after {
+      bottom: 9px;
+    }
+    .btn_bg {
+      width: 180px;
+      height: 50px;
+    }
+  }
+
+  .footer {
+    &-wrap {
+      &__body {
+        hr {
+          margin: 10% auto;
+        }
+        &__right {
+          &__nav {
+            margin-bottom: 0;
+            &__list {
+              flex-wrap: wrap;
+              margin: 0 auto;
+              justify-content: center;
+              &__item {
+                margin: 4% 5%;
+              }
+            }
+          }
+          &__bottom {
+            flex-direction: column;
+            &__left {
+              width: 120px;
+              margin: 8% auto;
+              a {
+                padding: 1.5rem;
+              }
+            }
+            &__right {
+              text-align: center;
+              margin: 5% auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

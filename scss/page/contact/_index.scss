@@ -1,0 +1,109 @@
+@use "../../global" as *;
+
+.contact {
+  &-wrap {
+    width: 70%;
+    &__intro {
+      p {
+        text-align: center;
+        span {
+          display: inline-block;
+          color: $Red;
+          font-size: 0.8rem;
+          margin-top: 1.5%;
+        }
+      }
+    }
+    &__form {
+      width: 80%;
+      margin: 5% auto;
+      &__box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto 7.5%;
+        &__ttl {
+          font-weight: bolder;
+          margin-bottom: 2%;
+          span {
+            color: $Red;
+            display: inline-block;
+            margin-left: 1%;
+          }
+        }
+        &__select,
+        &__input,
+        &__area {
+          height: 3rem;
+          width: 100%;
+          padding-left: 5px;
+          font-size: 1rem;
+          box-sizing: border-box;
+        }
+        &__area {
+          height: 10rem;
+        }
+      }
+      .contact-btn {
+        width: 150px;
+        height: 50px;
+        display: block;
+        margin: 0 auto;
+        border: 2px solid $Green;
+        background-color: $Green;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        color: $White;
+        font-weight: bolder;
+        transition: all .5s ease;
+        z-index: 2;
+        position: relative;
+        .btn_bg {
+          width: 150px;
+          height: 50px;
+          left: -150px;
+          top: 0;
+          background: $White;
+          position: absolute;
+          transition: all .5s ease;
+          z-index: -1;
+        }
+        &:hover {
+          color: $Green;
+          .btn_bg {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(tab) {
+  .contact {
+    &-wrap {
+      width: 90%;
+    }
+  }
+}
+
+@include mq(sp) {
+  .contact {
+    &-wrap {
+      &__form {
+        width: 100%;
+        &__box {
+          &__select,
+          &__input,
+          &__area {
+            height: 4rem;
+          }
+          &__area {
+            height: 15rem;
+          }
+        }
+      }
+    }
+  }
+}

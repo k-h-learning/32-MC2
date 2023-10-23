@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>WithCode -MC2-</title>
+    <meta name="description"
+      content="WithCode(ウィズコード)】Web制作会社が開発した実践的なカリキュラム。卒業後からWeb制作会社の案件を担当しながら稼ぐ環境を提供する唯一のプログラミングスクールです。">
+    <meta name="keywords" content="IT,プログラミング,フリーランス,副業">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://withcode-plus.tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WithCode -MC2-">
+    <meta property="og:description"
+      content="【WithCode(ウィズコード)】Web制作会社が開発した実践的なカリキュラム。卒業後からWeb制作会社の案件を担当しながら稼ぐ環境を提供する唯一のプログラミングスクールです。">
+    <meta property="og:site_name" content="WithCode">
+    <meta property="og:image" content="https://withcode-plus.tech/img/logo.png">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180*180" href="../favicon.ico">
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Zen+Old+Mincho:wght@400;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/page/common2/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/page/contact/style.css">
+  </head>
+
+  <body>
+    <header class="header js-header" id="header">
+      <div class="header-wrap">
+        <div class="header-wrap__logo">
+          <a href="../index.html">
+            <img src="../img/logo_f.png" alt="ロゴ画像" class="logo_f">
+            <img src="../img/logo.png" alt="ロゴ画像" class="logo_g">
+          </a>
+        </div>
+        <nav class="header-wrap__nav" id="js-nav">
+          <ul class="header-wrap__nav__list">
+            <li class="header-wrap__nav__list__item">
+              <a href="about.html">会社概要</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="service.html">事業概要</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="works.html">施工実績</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="news.html">お知らせ</a>
+            </li>
+            <li class="header-wrap__nav__list__item">
+              <a href="blog.html">ブログ</a>
+            </li>
+            <li class="header-wrap__nav__list__item __contact">
+              <a href="#">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="drawer"></div>
+    </header>
+
+    <main>
+      <section class="top" id="top">
+        <div class="top-wrap">
+          <h2 class="ttl_2 top_ttl_2">お問い合わせ</h2>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="contact-wrap __inner">
+          <div class="contact-wrap__intro">
+            <p>お問い合わせはお電話または下記フォームにて受け付けております。<br>
+            下記に必要事項を入力し、「送信する」ボタンを押してください。<br>
+            お送りいただきましたお問い合わせには、後日折り返し返答させていただきます。<br>
+            お急ぎの場合や自動返信メールが届かない場合などは、お手数ですがお電話にてご連絡ください。<br>
+            <span>※（必須項目）</span>
+            </p>
+          </div>
+          <form action="#" class="contact-wrap__form" id="form">
+            <div class="contact-wrap__form__box">
+              <label for="name" class="contact-wrap__form__box__ttl">お問い合わせ項目<span>*</span></label>
+              <select name="お問い合わせ項目" required="required" class="contact-wrap__form__box__select">
+                <optgroup value>
+                  <option value="選択してください" hidden class="contact-wrap__form__box__select__with">選択してください</option>
+                  <option value="選択してください" class="contact-wrap__form__box__select__with">依頼内容の相談</option>
+                  <option value="選択してください" class="contact-wrap__form__box__select__with">お見積り依頼</option>
+                  <option value="選択してください" class="contact-wrap__form__box__select__with">その他</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="contact-wrap__form__box">
+              <label for="company" class="contact-wrap__form__box__ttl">貴社名</label>
+              <input type="text" class="contact-wrap__form__box__input" name="貴社名" placeholder="お名前をご入力下さい">
+            </div>
+            <div class="contact-wrap__form__box">
+              <label for="name" class="contact-wrap__form__box__ttl">お名前（漢字）<span>*</span></label>
+              <input type="text" class="contact-wrap__form__box__input" name="お名前（漢字）" required="required"
+                placeholder="お名前をご入力下さい">
+            </div>
+            <div class="contact-wrap__form__box">
+              <label for="email" class="contact-wrap__form__box__ttl">メールアドレス<span>*</span></label>
+              <input type="email" class="contact-wrap__form__box__input" name="メールアドレス" required="required"
+                placeholder="例）example@example.com">
+            </div>
+            <div class="contact-wrap__form__box">
+              <label for="tel" class="contact-wrap__form__box__ttl">電話番号<span>*</span></label>
+              <input type="tel" class="contact-wrap__form__box__input" name="電話番号" required="required"
+                placeholder="例）00-0000-0000">
+            </div>
+            <div class="contact-wrap__form__box _area">
+              <label for="message" class="contact-wrap__form__box__ttl">お問い合わせ内容<span>*</span></label>
+              <textarea name="お問い合わせ内容" class="contact-wrap__form__box__area" id="message" required="required"
+                placeholder="お問い合わせ内容をご入力下さい"></textarea>
+            </div>
+            <button type="submit" class="contact-btn">
+              <div class="btn_bg"></div>
+              送信する
+            </button>
+            <!-- <div class="contact-wrap__form__btn ">
+              <button type="submit" class="contact-btn __btn_1">
+                <div class="btn_bg"></div>
+                送信する
+              </button> -->
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="footer-wrap">
+        <div class="footer-wrap__body">
+          <div class="footer-wrap__body__left">
+            <div class="footer-wrap__body__left__logo">
+              <a href="../index.html">
+                <img src="../img/logo_f.png" alt="ロゴ画像">
+              </a>
+            </div>
+            <div class="footer-wrap__body__left__add">
+              <p>〒000-0000 東京都渋谷区渋谷1-1</p>
+            </div>
+          </div>
+          <hr>
+          <div class="footer-wrap__body__right">
+            <nav class="footer-wrap__body__right__nav">
+              <ul class="footer-wrap__body__right__nav__list">
+                <li class="footer-wrap__body__right__nav__list__item">
+                  <a href="about.html">会社概要</a>
+                </li>
+                <li class="footer-wrap__body__right__nav__list__item">
+                  <a href="service.html">事業概要</a>
+                </li>
+                <li class="footer-wrap__body__right__nav__list__item">
+                  <a href="works.html">施工実績</a>
+                </li>
+                <li class="footer-wrap__body__right__nav__list__item">
+                  <a href="news.html">お知らせ</a>
+                </li>
+                <li class="footer-wrap__body__right__nav__list__item">
+                  <a href="blog.html">ブログ</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer-wrap__body__right__bottom">
+              <div class="footer-wrap__body__right__bottom__left">
+                <a href="#">
+                  <i class="fa-regular fa-envelope"></i><br>
+                  お問い合わせ
+                </a>
+              </div>
+              <div class="footer-wrap__body__right__bottom__right">
+                <a href="tel:000-000-0000">TEL:000-000-0000</a>
+                <p>営業時間：9：00～17：00 定休日：土曜日・日曜日・祝日</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-wrap__copyright">
+          <small>Copyright © Hara Co., Ltd. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- JQ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- slick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/common2.js"></script>
+  </body>
+
+</html>
