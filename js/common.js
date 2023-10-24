@@ -16,9 +16,9 @@ $(function () {
 function fadeIn() {
   $('.fadeInTrigger').each(function () {
     let scroll = $(window).scrollTop();
-    let tritop = $(this).offset().top + 100;
+    let triTop = $(this).offset().top + 100;
     let winHeight = $(window).height();
-    if (scroll >= tritop - winHeight) {
+    if (scroll >= triTop - winHeight) {
       $(this).addClass('fadeIn');
     } else {
       $(this).removeClass('fadeIn');
@@ -65,16 +65,28 @@ $(window).scroll(function () {
 
 
 // ハンバーガーメニュー
-window.onunload = function() {};
-function sizecheck() {
-  w = window.innerWidth ? window.innerWidth : $(window).width();
-  h = window.innerHeight ? window.innerHeight : $(window).height();
-}
+// window.onload = function() {};
+// function sizecheck() {
+//   w = window.innerWidth ? window.innerWidth : $(window).width();
+//   h = window.innerHeight ? window.innerHeight : $(window).height();
+// }
 
-sizecheck();
+// sizecheck();
+// $(function () {
+//   if (w > 481) {
+// } else { 
+//   $("header .drawer").click(function(){
+//   $('body').toggleClass('nav-open');
+//   $('header .header-wrap__nav').fadeToggle(200);
+//     });
+//   $(".header-wrap__nav__list__item a").click(function(){
+//   $('body').toggleClass('nav-open');
+//   $('header .header-wrap__nav').fadeToggle(200);
+//     });
+//   }
+// }); 
+
 $(function () {
-  if (w > 481) {
-} else { 
   $("header .drawer").click(function(){
   $('body').toggleClass('nav-open');
   $('header .header-wrap__nav').fadeToggle(200);
@@ -83,6 +95,4 @@ $(function () {
   $('body').toggleClass('nav-open');
   $('header .header-wrap__nav').fadeToggle(200);
     });
-  }
 }); 
-
